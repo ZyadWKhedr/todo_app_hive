@@ -22,30 +22,30 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  bool _isDarkMode = false; // Toggle for dark mode
+  bool _isDarkMode = false; 
 
   @override
   void initState() {
     super.initState();
-    _loadThemePreference(); // Load the theme preference when the app starts
+    _loadThemePreference(); 
   }
 
   void _loadThemePreference() async {
     final box =
-        await Hive.openBox('settingsBox'); // Open a separate settings box
+        await Hive.openBox('settingsBox'); 
     setState(() {
       _isDarkMode =
-          box.get('darkMode', defaultValue: false); // Get the theme preference
+          box.get('darkMode', defaultValue: false); 
     });
   }
 
   void _toggleTheme() async {
     setState(() {
-      _isDarkMode = !_isDarkMode; // Toggle theme
+      _isDarkMode = !_isDarkMode; 
     });
 
-    final box = await Hive.openBox('settingsBox'); // Open the settings box
-    await box.put('darkMode', _isDarkMode); // Save the theme preference
+    final box = await Hive.openBox('settingsBox'); 
+    await box.put('darkMode', _isDarkMode); 
   }
 
   @override
@@ -54,8 +54,8 @@ class _MyAppState extends State<MyApp> {
       theme: _isDarkMode ? _darkTheme() : _lightTheme(),
       debugShowCheckedModeBanner: false,
       home: MainPage(
-        toggleTheme: _toggleTheme, // Pass toggle function
-        isDarkMode: _isDarkMode, // Pass the current theme state
+        toggleTheme: _toggleTheme, 
+        isDarkMode: _isDarkMode, 
       ),
     );
   }
