@@ -171,7 +171,7 @@ class _HomePageState extends State<HomePage> {
                       children: [
                         const CircleAvatar(
                           backgroundColor:
-                              Colors.blue, // Replace with theme color if needed
+                              Colors.blue, 
                           radius: 6,
                         ),
                         const SizedBox(width: 5),
@@ -189,7 +189,7 @@ class _HomePageState extends State<HomePage> {
                         CircularProgressIndicator(
                           value: countDoneTasks(box) / box.values.length,
                           color:
-                              Colors.blue, // Replace with theme color if needed
+                              Colors.blue, 
                           backgroundColor: Colors.grey,
                         ),
                       ],
