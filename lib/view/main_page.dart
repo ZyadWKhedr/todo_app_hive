@@ -5,8 +5,8 @@ import 'menu.dart';
 import 'package:iconsax/iconsax.dart';
 
 class MainPage extends StatefulWidget {
-  final VoidCallback toggleTheme; // Callback for toggling theme
-  final bool isDarkMode; // Current theme state
+  final VoidCallback toggleTheme; 
+  final bool isDarkMode; 
 
   const MainPage({Key? key, required this.toggleTheme, required this.isDarkMode}) : super(key: key);
 
@@ -33,7 +33,7 @@ class _MainPageState extends State<MainPage> {
           PopupMenuButton<int>(
             onSelected: (value) {
               if (value == 1) {
-                widget.toggleTheme(); // Call toggle function for theme
+                widget.toggleTheme(); 
               }
             },
             itemBuilder: (context) => [
@@ -44,9 +44,9 @@ class _MainPageState extends State<MainPage> {
                   children: [
                     const Text('Toggle Theme'),
                     Switch(
-                      value: widget.isDarkMode, // Current theme state
+                      value: widget.isDarkMode, 
                       onChanged: (value) {
-                        widget.toggleTheme(); // Call the toggle function
+                        widget.toggleTheme(); 
                       },
                     ),
                   ],
